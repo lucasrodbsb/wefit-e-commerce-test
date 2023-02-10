@@ -67,7 +67,7 @@ const Home = () => {
                                 setDataMovies(
                                     dataMovies.map(item =>
                                         item.id === index+1
-                                        ? { ...item, quantity: item.quantity+1 }
+                                        ? { ...item, quantity: item.quantity ? 0 : 1 }
                                         : item
                                         )
                                         )
