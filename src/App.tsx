@@ -26,7 +26,6 @@ const App = () => {
 
   return (
     <Area>
-      <Header />
       <RouterProvider router={router} />
     </Area>
   );

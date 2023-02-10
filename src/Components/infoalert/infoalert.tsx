@@ -1,5 +1,6 @@
 import React from "react";
 import * as C from './infoalert.styled'
+import { Link } from "react-router-dom";
 
 type Props = {
     infoText: string,
@@ -11,7 +12,7 @@ const InfoAlert = (props: Props) => {
         <C.InfoContainer>
             <C.InfoTitle>{props.infoText}</C.InfoTitle>
             <C.InfoImage src={props.image} alt="aprovedImg"></C.InfoImage>
-            <C.BackBtn>VOLTAR</C.BackBtn>
+                <C.BackBtn>VOLTAR</C.BackBtn>
         </C.InfoContainer>
     )
 

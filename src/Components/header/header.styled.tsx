@@ -29,6 +29,7 @@ export const Cart = styled.div <Props>`
     align-items: center;
     justify-content: center;
     gap: 10px;
+    cursor: Pointer;
 `
 export const CartTitle = styled.h3`
     font-size: 14px;

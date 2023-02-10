@@ -44,7 +44,9 @@ export const MoviePrice = styled.h4 <Props>`
 `;
 
 export const AddMovieBtn = styled.button<Props>`
-    all: unset;
+    border: none;
+    font-family: 'Open Sans';
+    color: #fff;
     width: 100%;
     background-color: ${props => props.bgColor};
     display: flex;
@@ -54,12 +56,12 @@ export const AddMovieBtn = styled.button<Props>`
     align-items: center;
     padding: 8px;
     border-radius: 4px;
+    cursor: Pointer;
 `;
 
 export const BtnText = styled.p`
     font-weight: 700;
     font-size: 12px;
-    // line-height: 16px;
     text-align: center;
 `;
 
