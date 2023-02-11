@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './Components/header/header'
-import Home from './Telas/Home/home'
+import Home from './screens/Home/home'
 import { Area } from './styled'
-import Cart from './Telas/Carrinho/CarrinhoItem/cart'
+import Cart from './screens/Cart/CartItems/cart'
+import Aproved from './screens/AcceptedBuy/aproved'
 
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/aproved",
+    element: <Aproved />,
   },
 ]);
 

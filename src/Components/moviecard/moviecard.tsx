@@ -1,6 +1,7 @@
 import React from "react";
 import * as C from "../../Components/moviecard/moviecard.styled";
 import cart from '../../assets/images/carrinho.svg'
+import { currency } from "../../constants/formats";
 
 interface Props {
     moviePoster?: string,
@@ -21,7 +22,7 @@ const MovieCard = (props: Props) => {
                 {props.movieTitle}
             </C.MovieTitle>
             <C.MoviePrice>
-                R$ {props.moviePrice}
+                R$ {currency(Number(props.moviePrice), 2, 3, '.', ',')}
             </C.MoviePrice>
             <C.AddMovieBtn bgColor={props.movieColorBtn} onClick={props.onClick}>
                 <C.LeftDiv>

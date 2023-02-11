@@ -12,7 +12,9 @@ const InfoAlert = (props: Props) => {
         <C.InfoContainer>
             <C.InfoTitle>{props.infoText}</C.InfoTitle>
             <C.InfoImage src={props.image} alt="aprovedImg"></C.InfoImage>
+            <Link to='/'>
                 <C.BackBtn>VOLTAR</C.BackBtn>
+            </Link>
         </C.InfoContainer>
     )
 

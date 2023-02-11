@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { white } from '../../styles/colors';
 
 type Props = {
     flexDirection?: string;
@@ -35,8 +36,9 @@ export const CartTitle = styled.h3`
     font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
+    color: ${white};
 
-    @media (max-width: 600px) {
+    @media (max-width: 746px) {
         display: none;
     }
 `

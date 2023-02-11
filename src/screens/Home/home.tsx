@@ -22,6 +22,7 @@ const Home = () => {
     }, [])
 
     const findMovies = () => {
+        localStorage.clear();
         let json: MoviesType[] = data.products.map((item) => {
             return {
                 id: item.id,
@@ -46,6 +47,27 @@ const Home = () => {
             quantity += item.quantity
         })
         setTotal(quantity)
+        localStorage.setItem('total', String(quantity))
+    }
+
+    const addMovie = (item: MoviesType, index: number) => {
+        if (dataMovies == null)
+            return
+
+        setDataMovies(
+            dataMovies.map(item =>
+                item.id === index+1
+                ? { ...item, quantity: item.quantity ? 0 : 1 }
+                : item
+            )
+        )
+
+        let movies = JSON.parse(localStorage.getItem('movies') || '[]')
+
+        if (item.quantity > 0) delete movies[index]
+
+        movies.push({ ...item, quantity: item.quantity ? 0 : 1 })
+        localStorage.setItem('movies', JSON.stringify(movies))
     }
 
     return(
@@ -63,15 +85,7 @@ const Home = () => {
                             movieColorBtn={!item.quantity ? blueColorBtn : greenColorBtn}
                             movieNumItens={item.quantity}
                             movieTxtBtn={!item.quantity ? txtDefaultAddMovie : txtActiveMovie}
-                            onClick={() => {
-                                setDataMovies(
-                                    dataMovies.map(item =>
-                                        item.id === index+1
-                                        ? { ...item, quantity: item.quantity ? 0 : 1 }
-                                        : item
-                                        )
-                                        )
-                            }}
+                            onClick={() => addMovie(item, index)}
                         />
                     ))
                 }

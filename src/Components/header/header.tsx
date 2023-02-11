@@ -7,20 +7,26 @@ interface Props {
 }
 
 const Header = (props: Props) => {
-    return(
+    return (
         <C.HeaderContainer mgBottom="24px">
             <C.Logo>WeMovies</C.Logo>
+
             <C.Cart>
+
                 <C.Info>
-                    <C.CartTitle>Meu Carrinho</C.CartTitle>
-                    <C.Items>{ props.itemsQuantity } itens</C.Items>
+                    
+                        <C.CartTitle>Meu Carrinho</C.CartTitle>
+                        <C.Items>{props.itemsQuantity} itens</C.Items>
+                    
                 </C.Info>
-                <Link to='/cart'>
-                    <C.Bag src={cartBag} alt="cart-bag" />
+            <Link to='/cart' style={{ textDecoration: 'none', color: '#FFF' }}>
+                <C.Bag src={cartBag} alt="cart-bag" />
                 </Link>
+
             </C.Cart>
+
         </C.HeaderContainer>
     )
-} 
+}
 
 export default Header;
